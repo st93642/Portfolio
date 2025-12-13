@@ -153,6 +153,73 @@ For more details, see [GitHub's custom domain documentation](https://docs.github
 2. Reference them in `assets/js/main.js` with the path: `assets/img/your-image.png`
 3. Always include descriptive `imageAlt` text for accessibility
 
+## Testing
+
+This project includes automated end-to-end tests using [Playwright](https://playwright.dev/).
+
+### Running Tests
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Install Playwright browsers (first time only):**
+   ```bash
+   npx playwright install
+   ```
+
+3. **Run all tests:**
+   ```bash
+   npm test
+   ```
+
+4. **Run tests with visible browser:**
+   ```bash
+   npm run test:headed
+   ```
+
+5. **Run tests in interactive UI mode:**
+   ```bash
+   npm run test:ui
+   ```
+
+6. **Debug tests step-by-step:**
+   ```bash
+   npm run test:debug
+   ```
+
+7. **View test report:**
+   ```bash
+   npm run test:report
+   ```
+
+### Test Coverage
+
+The test suite covers:
+
+- **Basic functionality:** Page loads, sections render, footer year updates
+- **Navigation:** Smooth scrolling, active link highlighting, mobile menu interactions
+- **Dynamic content:** Projects and notes rendering from data arrays
+- **Accessibility:** Semantic HTML, ARIA labels, keyboard navigation, skip links
+- **Responsive design:** Desktop, tablet, and mobile viewports
+- **Animations:** Reveal animations, staggered effects, reduced motion support
+- **Security:** External links have proper `rel` attributes
+
+### Test Configuration
+
+- **Browsers tested:** Chrome, Firefox, Safari (Desktop & Mobile)
+- **Test files location:** `tests/` directory
+- **Configuration:** `playwright.config.js`
+- **Auto-start server:** Tests automatically start a local server on port 8000
+
+### CI/CD Integration
+
+The tests are designed to run in CI environments. Set the `CI` environment variable to enable:
+- Automatic retries (2 attempts)
+- Single worker (to avoid port conflicts)
+- Stricter test-only mode
+
 ## Tips
 
 - **Keep it simple:** This scaffold works with zero dependencies or build tools
