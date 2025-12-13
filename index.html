@@ -24,12 +24,20 @@
         <a class="brand" href="#top" aria-label="Go to top">Igors</a>
 
         <nav class="nav" aria-label="Primary">
-          <ul class="nav__list">
+          <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+          </button>
+          
+          <ul class="nav__list" id="nav-menu">
             <li><a class="nav__link" href="#about">About</a></li>
             <li><a class="nav__link" href="#projects">Projects</a></li>
             <li><a class="nav__link" href="#notes">Blog / Notes</a></li>
             <li><a class="nav__link" href="#contact">Contact</a></li>
           </ul>
+          
+          <div class="nav__overlay" aria-hidden="true"></div>
         </nav>
       </div>
     </header>

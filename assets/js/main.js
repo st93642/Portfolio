@@ -223,8 +223,149 @@ function setupActiveNavLink() {
   sections.forEach(({ section }) => observer.observe(section));
 }
 
-setupFooterYear();
-renderProjects();
-renderNotes();
-setupSmoothScroll();
-setupActiveNavLink();
+function setupMobileNavigation() {
+  const navToggle = document.querySelector(".nav__toggle");
+  const navMenu = document.querySelector(".nav__list");
+  const navOverlay = document.querySelector(".nav__overlay");
+  const navLinks = document.querySelectorAll(".nav__link");
+  
+  if (!navToggle || !navMenu) return;
+
+  function toggleMenu() {
+    const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
+    const newState = !isExpanded;
+    
+    navToggle.setAttribute("aria-expanded", String(newState));
+    navMenu.classList.toggle("nav--open", newState);
+    navOverlay?.classList.toggle("nav--open", newState);
+    
+    // Prevent body scroll when menu is open
+    if (newState) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }
+  
+  function closeMenu() {
+    navToggle.setAttribute("aria-expanded", "false");
+    navMenu.classList.remove("nav--open");
+    navOverlay?.classList.remove("nav--open");
+    document.body.style.overflow = "";
+  }
+  
+  // Toggle menu on button click
+  navToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    toggleMenu();
+  });
+  
+  // Close menu when clicking on nav links
+  navLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+  
+  // Close menu on escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navMenu.classList.contains("nav--open")) {
+      closeMenu();
+      navToggle.focus(); // Return focus to toggle button
+    }
+  });
+  
+  // Close menu when clicking on overlay
+  if (navOverlay) {
+    navOverlay.addEventListener("click", closeMenu);
+  }
+  
+  // Close menu when clicking outside (outside navMenu and navToggle)
+  document.addEventListener("click", (e) => {
+    const target = e.target;
+    if (
+      navMenu.classList.contains("nav--open") &&
+      !navMenu.contains(target) &&
+      !navToggle.contains(target) &&
+      (!navOverlay || !navOverlay.contains(target))
+    ) {
+      closeMenu();
+    }
+  });
+}
+
+function setupRevealAnimations() {
+  // Only run if IntersectionObserver is supported
+  if (!("IntersectionObserver" in window)) return;
+  
+  // Get sections excluding hero, and all cards
+  const sections = Array.from(document.querySelectorAll(".section")).filter(
+    section => !section.classList.contains("hero")
+  );
+  const cards = Array.from(document.querySelectorAll(".card"));
+  
+  const elementsToAnimate = [...sections, ...cards];
+  
+  if (elementsToAnimate.length === 0) return;
+  
+  // Add initial state for animations
+  elementsToAnimate.forEach((el) => {
+    el.classList.add("reveal-element");
+    el.style.opacity = "0";
+    el.style.transform = "translateY(24px)";
+    el.style.transition = prefersReducedMotion 
+      ? "none"
+      : "opacity 0.6s ease-out, transform 0.6s ease-out";
+  });
+  
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+          
+          // Add a small stagger effect for cards within the same parent
+          if (el.closest(".cards")) {
+            const cards = Array.from(el.closest(".cards").children);
+            const index = cards.indexOf(el);
+            el.style.transitionDelay = prefersReducedMotion 
+              ? "0ms" 
+              : `${index * 100}ms`;
+          }
+          
+          // Stop observing once the element has been revealed
+          observer.unobserve(el);
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    }
+  );
+  
+  elementsToAnimate.forEach((el) => observer.observe(el));
+}
+
+// Initialize everything when DOM is ready
+function init() {
+  setupFooterYear();
+  renderProjects();
+  renderNotes();
+  setupSmoothScroll();
+  setupActiveNavLink();
+  setupMobileNavigation();
+  
+  // Wait a bit to ensure content is rendered before setting up animations
+  setTimeout(() => {
+    setupRevealAnimations();
+  }, 100);
+}
+
+// Run initialization
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}
