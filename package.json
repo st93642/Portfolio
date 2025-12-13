@@ -1,0 +1,18 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "description": "Beginner-friendly static site scaffold using plain HTML, CSS, and JavaScript",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report"
+  },
+  "keywords": ["portfolio", "static-site", "html", "css", "javascript"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
