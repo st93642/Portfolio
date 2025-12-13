@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A beginner-friendly portfolio scaffold built with plain HTML, CSS, and JavaScript." />
+    <meta name="author" content="Igors" />
+    <meta name="theme-color" content="#0b1020" />
+
+    <meta property="og:title" content="Igors | Portfolio" />
+    <meta property="og:description" content="Selected projects, background, and ways to get in touch." />
+    <meta property="og:type" content="website" />
+
+    <title>Igors | Portfolio</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container header__inner">
+        <a class="brand" href="#top" aria-label="Go to top">Igors</a>
+
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#about">About</a></li>
+            <li><a class="nav__link" href="#projects">Projects</a></li>
+            <li><a class="nav__link" href="#notes">Blog / Notes</a></li>
+            <li><a class="nav__link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="main" tabindex="-1">
+      <section id="top" class="section hero" aria-label="Intro">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <p class="eyebrow">Hi, I'm Igors.</p>
+            <h1 class="hero__title">I build simple, useful software - from web apps to data visuals and small systems tools.</h1>
+            <p class="hero__subtitle">
+              This site is a plain-HTML scaffold you can grow over time: add projects, replace placeholder links, and publish.
+            </p>
+            <div class="hero__actions">
+              <a class="button" href="#projects">See projects</a>
+              <a class="button button--secondary" href="#contact">Get in touch</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="container">
+          <header class="section__header">
+            <h2 id="about-title">About Me</h2>
+            <p class="section__lede">A short, skimmable overview. Replace this copy with your real background and interests.</p>
+          </header>
+
+          <div class="two-col">
+            <div>
+              <h3>Background</h3>
+              <p>
+                I'm a developer who likes shipping small, polished projects. I enjoy turning vague ideas into working prototypes, then
+                iterating based on feedback.
+              </p>
+              <p>
+                My goal with this portfolio is to show a range of work: product-style web apps, data visualization, and practical
+                tooling.
+              </p>
+            </div>
+
+            <div>
+              <h3>Skills</h3>
+              <ul class="bullets">
+                <li>JavaScript (DOM, APIs), HTML, CSS</li>
+                <li>React / component-driven UI (optional)</li>
+                <li>Data visualization (D3, SVG, canvas)</li>
+                <li>Backend fundamentals (REST, auth, databases)</li>
+                <li>Systems basics (CLI tools, networking, performance)</li>
+              </ul>
+
+              <h3>Interests</h3>
+              <ul class="bullets">
+                <li>UX and accessibility</li>
+                <li>Developer experience and automation</li>
+                <li>Data storytelling</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <div class="container">
+          <header class="section__header">
+            <h2 id="projects-title">Projects</h2>
+            <p class="section__lede">A few representative projects across different problem spaces.</p>
+
+            <!--
+              How to update projects:
+              - Open assets/js/main.js
+              - Edit the PROJECTS array (title/description/tech/githubUrl/demoUrl/imageAlt)
+              - Add/remove entries to change the cards rendered here
+            -->
+          </header>
+
+          <div class="cards" data-projects aria-live="polite"></div>
+          <noscript>
+            <p class="noscript">JavaScript is disabled, so project cards cannot be rendered. See assets/js/main.js to edit them.</p>
+          </noscript>
+
+          <template id="project-card-template">
+            <article class="card project" data-project>
+              <a class="project__media" data-project-demo-link target="_blank" rel="noopener noreferrer">
+                <img class="project__img" data-project-image loading="lazy" decoding="async" />
+              </a>
+
+              <div class="card__body">
+                <h3 class="card__title" data-project-title></h3>
+                <p class="card__text" data-project-description></p>
+
+                <ul class="chips" data-project-tech aria-label="Tech stack"></ul>
+
+                <div class="card__actions" aria-label="Project links">
+                  <a class="button button--secondary" data-project-github target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a class="button" data-project-demo target="_blank" rel="noopener noreferrer">Live demo</a>
+                </div>
+              </div>
+            </article>
+          </template>
+        </div>
+      </section>
+
+      <section id="notes" class="section" aria-labelledby="notes-title">
+        <div class="container">
+          <header class="section__header">
+            <h2 id="notes-title">Blog / Notes</h2>
+            <p class="section__lede">Two stub entries to make room for future writing.</p>
+
+            <!--
+              How to update notes:
+              - Open assets/js/main.js
+              - Edit the NOTES array (title/date/summary/url)
+            -->
+          </header>
+
+          <div class="cards" data-notes aria-live="polite"></div>
+          <noscript>
+            <p class="noscript">JavaScript is disabled, so note cards cannot be rendered. See assets/js/main.js to edit them.</p>
+          </noscript>
+
+          <template id="note-card-template">
+            <article class="card note" data-note>
+              <div class="card__body">
+                <h3 class="card__title" data-note-title></h3>
+                <p class="meta" data-note-date></p>
+                <p class="card__text" data-note-summary></p>
+                <div class="card__actions">
+                  <a class="button button--secondary" data-note-link>Read (stub)</a>
+                </div>
+              </div>
+            </article>
+          </template>
+        </div>
+      </section>
+
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <div class="container">
+          <header class="section__header">
+            <h2 id="contact-title">Contact</h2>
+            <p class="section__lede">The easiest ways to reach me.</p>
+          </header>
+
+          <div class="contact">
+            <ul class="contact__list">
+              <li>
+                <strong>Email:</strong>
+                <a href="mailto:you@example.com">you@example.com</a>
+              </li>
+              <li>
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener noreferrer">linkedin.com/in/your-handle</a>
+              </li>
+              <li>
+                <strong>GitHub:</strong>
+                <a href="https://github.com/your-handle" target="_blank" rel="noopener noreferrer">github.com/your-handle</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer__inner">
+        <p>
+          <span>&copy; <span data-year></span> Igors.</span>
+          <span class="footer__sep" aria-hidden="true">&middot;</span>
+          <a href="#top" class="footer__link">Back to top</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
