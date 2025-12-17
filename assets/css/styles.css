@@ -963,6 +963,106 @@ a:focus-visible {
 }
 
 /* =================== */
+/* CV-Specific Styles for About Section */
+/* =================== */
+
+.cv-summary {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-base);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  border-left: 4px solid var(--brand-primary);
+}
+
+.cv-cert-date {
+  color: var(--text-tertiary);
+  font-size: var(--font-sm);
+  font-style: italic;
+}
+
+.cv-emoji {
+  font-size: 1.1em;
+  margin-right: var(--space-sm);
+}
+
+.cv-contact {
+  color: var(--text-secondary);
+  font-size: var(--font-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.cv-contact a {
+  color: var(--brand-secondary);
+}
+
+.cv-skills-grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .cv-skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cv-skill-category {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-base);
+  padding: var(--space-lg);
+}
+
+.cv-skill-category h4 {
+  color: var(--brand-primary);
+  font-size: var(--font-lg);
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: var(--space-sm);
+}
+
+.cv-timeline-item {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cv-timeline-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.cv-role {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.cv-company {
+  color: var(--brand-secondary);
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+}
+
+.cv-date {
+  color: var(--text-tertiary);
+  font-size: var(--font-sm);
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+}
+
+.cv-quote {
+  text-align: center;
+  font-style: italic;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+/* =================== */
 /* Additional Responsive Tweaks */
 /* =================== */
 
