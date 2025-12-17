@@ -13,8 +13,8 @@ const PROJECTS = [
     tech: ["Ruby", "Telegram Bot API", "ICS", "Redis", "Heroku"],
     githubUrl: "https://github.com/st93642/Calendar_bot",
     demoUrl: "",
-    imageUrl: "assets/img/placeholder-project.svg",
-    imageAlt: "Placeholder screenshot for Telegram Calendar Bot",
+    imageUrl: "assets/img/bot.png",
+    imageAlt: "Screenshot of Telegram Calendar Bot interface",
   },
   {
     title: "Net_Set - Network Security Toolkit",
@@ -33,8 +33,8 @@ const PROJECTS = [
     tech: ["Rust", "GTK4", "yt-dlp", "AppImage", "Windows Batch"],
     githubUrl: "https://github.com/st93642/VDownloader",
     demoUrl: "https://github.com/st93642/VDownloader/releases",
-    imageUrl: "assets/img/placeholder-project.svg",
-    imageAlt: "Placeholder screenshot for VDownloader desktop app",
+    imageUrl: "assets/img/vdownloader.png",
+    imageAlt: "Screenshot of VDownloader desktop application",
   },
   {
     title: "PT Journal - Penetration Testing Learning App",
@@ -43,8 +43,8 @@ const PROJECTS = [
     tech: ["Rust", "GTK4", "Libadwaita", "OpenAI / Ollama"],
     githubUrl: "https://github.com/st93642/pt-journal",
     demoUrl: "",
-    imageUrl: "assets/img/placeholder-project.svg",
-    imageAlt: "Placeholder screenshot for PT Journal desktop application",
+    imageUrl: "assets/img/pt-journal.png",
+    imageAlt: "Screenshot of PT Journal penetration testing app",
   },
   {
     title: "Uni Header - VS Code Extension",
@@ -53,8 +53,8 @@ const PROJECTS = [
     tech: ["JavaScript", "VS Code Extension API", "Node.js", "HTML", "CSS"],
     githubUrl: "https://github.com/st93642/TSI_Header",
     demoUrl: "https://marketplace.visualstudio.com/items?itemName=st93642.uni-header",
-    imageUrl: "assets/img/placeholder-project.svg",
-    imageAlt: "Placeholder screenshot for Uni Header VS Code extension",
+    imageUrl: "assets/img/tsi-header.png",
+    imageAlt: "Screenshot of Uni Header VS Code extension",
   },
   {
     title: "Matrix & Vector Calculator - Interactive Web Tool",
@@ -63,8 +63,8 @@ const PROJECTS = [
     tech: ["HTML", "CSS", "JavaScript", "Linear Algebra"],
     githubUrl: "https://github.com/st93642/Matrix-Calculator",
     demoUrl: "",
-    imageUrl: "assets/img/placeholder-project.svg",
-    imageAlt: "Placeholder screenshot for Matrix & Vector Calculator",
+    imageUrl: "assets/img/matrix-calculator.png",
+    imageAlt: "Screenshot of Matrix and Vector Calculator web tool",
   },
   {
     title: "Libft - Custom C Utility Library",
@@ -73,8 +73,18 @@ const PROJECTS = [
     tech: ["C", "Makefile", "Shell"],
     githubUrl: "https://github.com/st93642/Libft",
     demoUrl: "",
-    imageUrl: "assets/img/placeholder-project.svg",
-    imageAlt: "Placeholder screenshot for Libft C library",
+    imageUrl: "assets/img/libft.png",
+    imageAlt: "Screenshot of Libft C library code",
+  },
+  {
+    title: "Ollama Local Wrapper - Browser Chat UI",
+    description:
+      "A lightweight, browser-based chat interface for local Ollama models that runs without a backend server, including a single-file offline bundle.",
+    tech: ["JavaScript", "HTML", "CSS", "Python", "Bootstrap", "Ollama"],
+    githubUrl: "https://github.com/st93642/Ollama-local-wrapper",
+    demoUrl: "",
+    imageUrl: "assets/img/ollama.png",
+    imageAlt: "Screenshot of Ollama Local Wrapper chat interface",
   },
 ];
 
