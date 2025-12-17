@@ -68,4 +68,14 @@ const GITHUB_PROJECTS = [
     imageUrl: "assets/img/placeholder-project.svg",
     imageAlt: "Placeholder screenshot for Libft C library",
   },
+  {
+    title: "Ollama Local Wrapper - Browser Chat UI",
+    description:
+      "A lightweight, browser-based chat interface for local Ollama models that runs without a backend server, including a single-file offline bundle.",
+    tech: ["JavaScript", "HTML", "CSS", "Python", "Bootstrap", "Ollama"],
+    githubUrl: "https://github.com/st93642/Ollama-local-wrapper",
+    demoUrl: null,
+    imageUrl: "assets/img/placeholder-project.svg",
+    imageAlt: "Placeholder screenshot for Ollama Local Wrapper chat interface",
+  },
 ];
