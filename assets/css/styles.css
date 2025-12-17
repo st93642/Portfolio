@@ -647,6 +647,7 @@ a:focus-visible {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-xl);
+  grid-auto-rows: 1fr;
 }
 
 /* Tablet: 2 columns */
@@ -693,9 +694,19 @@ a:focus-visible {
 
 .card__body {
   padding: var(--space-xl);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-md);
   flex: 1;
+}
+
+.card__body .chips {
+  flex: 1;
+  margin-top: auto;
+}
+
+.card__body .card__actions {
+  margin-top: auto;
 }
 
 @media (max-width: 767px) {
@@ -760,6 +771,8 @@ a:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
+  align-content: flex-start;
+  align-self: start;
 }
 
 .chips li {
@@ -771,6 +784,12 @@ a:focus-visible {
   background: rgba(255, 255, 255, 0.03);
   font-weight: 500;
   transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: auto;
+  line-height: 1.4;
 }
 
 .chips li:hover {
@@ -975,6 +994,10 @@ a:focus-visible {
   border-left: 4px solid var(--brand-primary);
 }
 
+.cv-section {
+  margin-bottom: var(--space-2xl);
+}
+
 .cv-cert-date {
   color: var(--text-tertiary);
   font-size: var(--font-sm);
@@ -1072,17 +1095,14 @@ a:focus-visible {
   align-items: center;
   gap: var(--space-2xl);
   margin-bottom: var(--space-3xl);
-  padding: var(--space-2xl);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  padding: var(--space-xl) 0;
 }
 
 @media (min-width: 768px) {
   .about-profile {
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     gap: var(--space-4xl);
   }
 }
@@ -1118,16 +1138,19 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 400px;
+  width: 320px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--bg-primary);
 }
 
 .about-badge iframe {
-  width: 100%;
-  height: auto;
-  min-height: 200px;
-  border-radius: var(--radius-base);
-  background: rgba(255, 255, 255, 0.02);
+  width: 329px;
+  height: 88px;
+  border: none;
+  display: block;
+  margin: -4px -5px -4px -4px;
 }
 
 @media (max-width: 767px) {
