@@ -1063,6 +1063,85 @@ a:focus-visible {
 }
 
 /* =================== */
+/* About Profile Section (Photo + Badge) */
+/* =================== */
+
+.about-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-3xl);
+  padding: var(--space-2xl);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 768px) {
+  .about-profile {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-4xl);
+  }
+}
+
+.about-photo {
+  flex-shrink: 0;
+}
+
+.about-photo img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  border: 3px solid var(--brand-primary);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+}
+
+.about-photo img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--brand-secondary);
+}
+
+@media (min-width: 1024px) {
+  .about-photo img {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+.about-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.about-badge iframe {
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  border-radius: var(--radius-base);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 767px) {
+  .about-photo img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .about-badge {
+    max-width: 100%;
+  }
+}
+
+/* =================== */
 /* Additional Responsive Tweaks */
 /* =================== */
 
