@@ -7,43 +7,74 @@
 
 const PROJECTS = [
   {
-    title: "TaskFlow - Personal Task Manager (Web App)",
+    title: "Telegram Calendar Bot - Messaging Automation",
     description:
-      "A small productivity app that helped me practice CRUD flows, state management, and accessible UI patterns (forms, dialogs, keyboard support).",
-    tech: ["HTML", "CSS", "JavaScript", "LocalStorage"],
-    githubUrl: "https://github.com/your-handle/taskflow",
-    demoUrl: "https://example.com/taskflow",
+      "A Telegram bot for managing calendar events with ICS import, automatic reminders, and admin-only management commands.",
+    tech: ["Ruby", "Telegram Bot API", "ICS", "Redis", "Heroku"],
+    githubUrl: "https://github.com/st93642/Calendar_bot",
+    demoUrl: "",
     imageUrl: "assets/img/placeholder-project.svg",
-    imageAlt: "Placeholder screenshot for TaskFlow",
+    imageAlt: "Placeholder screenshot for Telegram Calendar Bot",
   },
   {
-    title: "CityPulse - Transit Reliability Dashboard (Data Viz)",
+    title: "Net_Set - Network Security Toolkit",
     description:
-      "An interactive dashboard exploring transit delays. Built to learn how to turn messy datasets into readable charts and meaningful filters.",
-    tech: ["JavaScript", "D3", "SVG", "Data cleaning"],
-    githubUrl: "https://github.com/your-handle/citypulse-dashboard",
-    demoUrl: "https://example.com/citypulse",
+      "A collection of scripts and UI wrappers to configure secure network settings with IPv6, DNS-over-HTTPS (DoH), and strict security policies across Linux, Windows, and Android.",
+    tech: ["Shell", "PowerShell", "Kotlin", "DNS-over-HTTPS", "IPv6", "Jetpack Compose"],
+    githubUrl: "https://github.com/st93642/Net_Set",
+    demoUrl: "",
     imageUrl: "assets/img/placeholder-project.svg",
-    imageAlt: "Placeholder screenshot for CityPulse dashboard",
+    imageAlt: "Placeholder screenshot for Net_Set network security toolkit",
   },
   {
-    title: "TinyHTTP - Minimal HTTP Server (Systems)",
+    title: "VDownloader - Cross-platform Video Downloader",
     description:
-      "A lightweight HTTP server experiment focused on fundamentals: sockets, routing, request parsing, and basic performance profiling.",
-    tech: ["Go", "HTTP", "Sockets", "CLI"],
-    githubUrl: "https://github.com/your-handle/tinyhttp",
-    demoUrl: "https://example.com/tinyhttp",
+      "A modern, cross-platform video downloader with a GTK4 interface, bundling yt-dlp to download from popular platforms.",
+    tech: ["Rust", "GTK4", "yt-dlp", "AppImage", "Windows Batch"],
+    githubUrl: "https://github.com/st93642/VDownloader",
+    demoUrl: "https://github.com/st93642/VDownloader/releases",
     imageUrl: "assets/img/placeholder-project.svg",
-    imageAlt: "Placeholder screenshot for TinyHTTP",
+    imageAlt: "Placeholder screenshot for VDownloader desktop app",
   },
   {
-    title: "PocketAPI - Notes API (Backend)",
-    description: "A REST API for notes with authentication and pagination. Built to practice API design, validation, and testing.",
-    tech: ["Node.js", "Express", "REST", "JWT"],
-    githubUrl: "https://github.com/your-handle/pocketapi",
-    demoUrl: "https://example.com/pocketapi",
+    title: "PT Journal - Penetration Testing Learning App",
+    description:
+      "A GTK4/Libadwaita desktop application for penetration testing education, featuring tutorials, quizzes, and tool documentation—built with Rust.",
+    tech: ["Rust", "GTK4", "Libadwaita", "OpenAI / Ollama"],
+    githubUrl: "https://github.com/st93642/pt-journal",
+    demoUrl: "",
     imageUrl: "assets/img/placeholder-project.svg",
-    imageAlt: "Placeholder screenshot for PocketAPI",
+    imageAlt: "Placeholder screenshot for PT Journal desktop application",
+  },
+  {
+    title: "Uni Header - VS Code Extension",
+    description:
+      "A VS Code extension that inserts customizable institution headers/boilerplates and scaffolds projects across many languages, with study tools like Learn Mode, Pomodoro, and a calendar.",
+    tech: ["JavaScript", "VS Code Extension API", "Node.js", "HTML", "CSS"],
+    githubUrl: "https://github.com/st93642/TSI_Header",
+    demoUrl: "https://marketplace.visualstudio.com/items?itemName=st93642.uni-header",
+    imageUrl: "assets/img/placeholder-project.svg",
+    imageAlt: "Placeholder screenshot for Uni Header VS Code extension",
+  },
+  {
+    title: "Matrix & Vector Calculator - Interactive Web Tool",
+    description:
+      "Single-file interactive web apps for linear algebra, including a matrix calculator with symbolic algebra and a 2D/3D vector calculator with step-by-step visualization.",
+    tech: ["HTML", "CSS", "JavaScript", "Linear Algebra"],
+    githubUrl: "https://github.com/st93642/Matrix-Calculator",
+    demoUrl: "",
+    imageUrl: "assets/img/placeholder-project.svg",
+    imageAlt: "Placeholder screenshot for Matrix & Vector Calculator",
+  },
+  {
+    title: "Libft - Custom C Utility Library",
+    description:
+      "A custom C library (42 School Libft) reimplementing common libc utilities and adding extra helpers, organized by function category.",
+    tech: ["C", "Makefile", "Shell"],
+    githubUrl: "https://github.com/st93642/Libft",
+    demoUrl: "",
+    imageUrl: "assets/img/placeholder-project.svg",
+    imageAlt: "Placeholder screenshot for Libft C library",
   },
 ];
 
