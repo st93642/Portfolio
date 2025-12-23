@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professional CV of Igors - Junior Cybersecurity Professional">
-  <meta name="author" content="Igors">
-  <title>Igors | CV</title>
-  
-  <!-- Tailwind CSS CDN -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="One-page CV of Igors Oleinikovs - Junior Cybersecurity Professional" />
+  <meta name="author" content="Igors Oleinikovs" />
+  <title>Igors Oleinikovs | One‑Page CV</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Tailwind Configuration -->
+
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -27,7 +25,7 @@
               600: '#0070e5',
               700: '#005bc7',
               800: '#0546a4',
-              900: '#073a86',
+              900: '#073a86'
             },
             dark: {
               50: '#f8fafc',
@@ -40,124 +38,119 @@
               700: '#334155',
               800: '#1e293b',
               900: '#0f172a',
-              950: '#020617',
+              950: '#020617'
             }
           },
           fontFamily: {
             sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-            heading: ['Outfit', 'system-ui', '-apple-system', 'sans-serif'],
+            heading: ['Outfit', 'system-ui', '-apple-system', 'sans-serif']
           }
         }
       }
     }
   </script>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+
   <style>
-    /* Custom Print Styles */
+    .no-print { display: block; }
+
+    /* Print: force true 2-column, one-page compact output */
     @media print {
       @page {
-        margin: 0.4in;
-        size: letter;
+        margin: 0.28in;
+        /* Let the user's PDF page size (A4/Letter) decide */
+        size: auto;
       }
-      
+
+      html, body {
+        background: #ffffff !important;
+      }
+
       body {
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
-        font-size: 9pt;
+        font-size: 8pt;
+        line-height: 1.15;
       }
-      
-      .no-print {
-        display: none !important;
+
+      .no-print { display: none !important; }
+
+      /* Ensure the CV uses the whole printable width */
+      .cv-page {
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
       }
-      
-      .print-break-after {
-        page-break-after: always;
+
+      /* Force 2 columns in print regardless of responsive breakpoints */
+      .cv-columns {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.22in !important;
       }
-      
+
+      /* Remove large visual chrome that wastes space in print */
+      .shadow, .shadow-sm, .shadow-md { box-shadow: none !important; }
+
+      h1 { font-size: 16pt !important; }
+      h2 { font-size: 10pt !important; margin-bottom: 4px !important; padding-bottom: 2px !important; }
+      h3 { font-size: 8.7pt !important; }
+
+      .section { margin-top: 8px !important; }
+
+      a { color: #005bc7 !important; text-decoration: none !important; }
+
+      /* Prevent awkward splits */
       .print-break-inside-avoid {
         break-inside: avoid;
         page-break-inside: avoid;
       }
-      
-      a {
-        color: #005bc7 !important;
-        text-decoration: none;
-      }
-      
-      /* Ensure dark mode doesn't affect print */
+
+      /* Hide photo for print (saves vertical space) */
+      .print-hide { display: none !important; }
+
+      /* Ensure dark mode never prints dark */
       .dark body, .dark * {
-        color: #1e293b !important;
+        color: #0f172a !important;
         background-color: #ffffff !important;
       }
-      
-      .dark .bg-dark-900, .dark .bg-dark-800, .dark .bg-dark-700 {
-        background-color: #ffffff !important;
-      }
-      
-      .dark .text-dark-100, .dark .text-dark-200, .dark .text-dark-300 {
-        color: #1e293b !important;
-      }
-      
-      /* Skill tags in print */
-      .skill-tag {
-        background-color: #e0effe !important;
-        color: #005bc7 !important;
-        border: 1px solid #7cc4fa !important;
-      }
-      
-      h1 { font-size: 18pt !important; }
-      h2 { font-size: 12pt !important; }
-      h3 { font-size: 10pt !important; }
     }
-    
-    /* Smooth transitions */
-    * {
-      transition-property: background-color, border-color, color, fill, stroke;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
-    }
-    
+
     @media (prefers-reduced-motion: reduce) {
-      * {
-        transition-property: none !important;
-        animation: none !important;
-      }
+      * { transition: none !important; animation: none !important; }
     }
   </style>
 </head>
 
 <body class="bg-gray-50 text-gray-900 dark:bg-dark-950 dark:text-dark-100 font-sans antialiased min-h-screen">
-  <!-- Skip Link for Accessibility -->
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600">
     Skip to main content
   </a>
 
-  <!-- Action Bar (Hidden on Print) -->
+  <!-- Action Bar (hidden on print) -->
   <div class="no-print sticky top-0 z-40 bg-white/80 dark:bg-dark-900/80 backdrop-blur-md border-b border-gray-200 dark:border-dark-700">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
       <div class="flex items-center gap-2">
         <svg class="w-4 h-4 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
         </svg>
-        <span class="text-sm font-medium text-gray-700 dark:text-dark-200">Igors - CV</span>
+        <span class="text-sm font-medium text-gray-700 dark:text-dark-200">One‑Page CV</span>
       </div>
+
       <div class="flex items-center gap-3">
-        <!-- Theme Toggle -->
         <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-dark-800 hover:bg-gray-200 dark:hover:bg-dark-700 focus:outline-none focus:ring-2 focus:ring-primary-600" aria-label="Toggle dark mode">
-          <svg id="theme-toggle-light-icon" class="w-4 h-4 text-gray-600 dark:text-dark-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-gray-600 dark:text-dark-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
           </svg>
-          <svg id="theme-toggle-dark-icon" class="w-4 h-4 text-gray-600 dark:text-dark-300 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-gray-600 dark:text-dark-300 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
           </svg>
         </button>
-        <!-- Print Button -->
-        <button onclick="window.print()" class="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700">
+
+        <button onclick="window.print()" class="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
           </svg>
@@ -167,466 +160,149 @@
     </div>
   </div>
 
-  <!-- Main Content -->
-  <main id="main-content" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
-    
-    <!-- Header Section -->
-    <header class="mb-4 print-break-inside-avoid">
-      <div class="flex flex-col md:flex-row gap-4 items-start">
-        <!-- Profile Photo -->
-        <div class="flex-shrink-0">
-          <img src="i_oleinikovs_foto.jpg" alt="Igors Oleinikovs" class="w-20 h-20 md:w-24 md:h-24 rounded-lg object-cover border-2 border-primary-500 shadow-md">
+  <main id="main-content" class="cv-page max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <!-- Header -->
+    <header class="print-break-inside-avoid">
+      <div class="flex items-start gap-4">
+        <div class="print-hide flex-shrink-0">
+          <img src="i_oleinikovs_foto.jpg" alt="Igors Oleinikovs" class="w-16 h-16 rounded-md object-cover border border-primary-500" />
         </div>
-        
-        <!-- Name & Contact -->
+
         <div class="flex-1">
-          <h1 class="text-2xl md:text-3xl font-bold font-heading text-gray-900 dark:text-white mb-1">
-            Igors Oleinikovs
-          </h1>
-          <p class="text-lg md:text-xl font-semibold text-primary-600 dark:text-primary-400 mb-2">
-            Junior Cybersecurity Professional
-          </p>
-          
-          <!-- Contact Info -->
-          <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-600 dark:text-dark-300">
-            <span class="flex items-center gap-1">
-              <svg class="w-3 h-3 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-              Latvia
-            </span>
-            <span class="flex items-center gap-1">
-              <svg class="w-3 h-3 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-              </svg>
-              <a href="tel:+37120497679" class="hover:text-primary-600 dark:hover:text-primary-400">+371 20497679</a>
-            </span>
-            <span class="flex items-center gap-1">
-              <svg class="w-3 h-3 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-              </svg>
-              <a href="mailto:vombat@duck.com" class="hover:text-primary-600 dark:hover:text-primary-400">vombat@duck.com</a>
-            </span>
-            <span class="flex items-center gap-1">
-              <svg class="w-3 h-3 text-primary-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-              <a href="https://www.linkedin.com/in/oleinikovsigors" target="_blank" rel="noopener noreferrer" class="hover:text-primary-600 dark:hover:text-primary-400">LinkedIn</a>
-            </span>
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+            <div>
+              <h1 class="text-2xl sm:text-3xl font-bold font-heading text-gray-900 dark:text-white leading-tight">Igors Oleinikovs</h1>
+              <p class="text-base sm:text-lg font-semibold text-primary-600 dark:text-primary-400 leading-tight">Junior Cybersecurity Professional</p>
+            </div>
+
+            <div class="text-[11px] text-gray-700 dark:text-dark-200 leading-tight sm:text-right">
+              <div>Latvia</div>
+              <div><a class="hover:underline" href="tel:+37120497679">+371 20497679</a></div>
+              <div><a class="hover:underline" href="mailto:vombat@duck.com">vombat@duck.com</a></div>
+              <div><a class="hover:underline" href="https://www.linkedin.com/in/oleinikovsigors" target="_blank" rel="noopener noreferrer">linkedin.com/in/oleinikovsigors</a></div>
+            </div>
           </div>
+
+          <p class="mt-2 text-[11px] text-gray-700 dark:text-dark-200 leading-snug">
+            Software engineer transitioning into cybersecurity. <strong>ISC² Candidate</strong> with hands-on foundations in <strong>Linux (RHCSA)</strong>, <strong>network security</strong>, <strong>API security</strong>, and <strong>cloud (OCI)</strong>.
+          </p>
         </div>
-      </div>
-      
-      <!-- Professional Summary -->
-      <div class="mt-3 p-3 bg-white dark:bg-dark-800 rounded-lg border-l-2 border-primary-500 shadow-sm">
-        <p class="text-xs text-gray-700 dark:text-dark-200 leading-relaxed">
-          Software Engineer transitioning to cybersecurity with strong technical foundations and analytical thinking. 
-          <strong>ISC² Candidate</strong> building expertise in <strong>network security</strong>, <strong>ethical hacking</strong>, <strong>cloud security (OCI)</strong>, and <strong>system hardening (RHCSA)</strong>. 
-          Proven quick learner thriving in high-pressure environments.
-        </p>
       </div>
     </header>
 
-    <!-- Two Column Layout for Main Content -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      
-      <!-- Left Column -->
-      <div class="space-y-3">
-        
-        <!-- Professional Experience -->
-        <section class="print-break-inside-avoid">
-          <h2 class="text-base font-bold font-heading text-gray-900 dark:text-white mb-2 flex items-center gap-1.5 pb-1 border-b border-primary-500">
-            <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-            </svg>
-            Professional Experience
-          </h2>
-          
-          <!-- Experience Item 1 -->
-          <div class="bg-white dark:bg-dark-800 rounded-lg p-3 shadow-sm mb-2">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
-              <h3 class="text-sm font-semibold text-gray-900 dark:text-white">Application Development Analyst</h3>
-              <span class="text-xs font-medium text-primary-600 dark:text-primary-400 whitespace-nowrap">Jan 2022 – Jan 2023</span>
+    <!-- Two columns (forced in print) -->
+    <div class="cv-columns mt-3 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Left column -->
+      <div>
+        <section class="section print-break-inside-avoid">
+          <h2 class="text-sm font-bold font-heading text-gray-900 dark:text-white border-b border-primary-500 pb-1">Experience</h2>
+          <div class="mt-2 space-y-2 text-[11px] leading-snug">
+            <div>
+              <div class="flex items-baseline justify-between gap-2">
+                <h3 class="font-semibold text-gray-900 dark:text-white">Accenture Baltics — Application Development Analyst</h3>
+                <span class="text-primary-600 dark:text-primary-400 whitespace-nowrap">2022–2023</span>
+              </div>
+              <ul class="mt-0.5 list-disc pl-4 text-gray-700 dark:text-dark-200">
+                <li>MuleSoft/Salesforce integrations; secure data flows and API security practices.</li>
+                <li>Git-based delivery in agile teams; attention to security and reliability.</li>
+              </ul>
             </div>
-            <p class="text-xs text-primary-600 dark:text-primary-400 font-medium mb-1.5">Accenture Baltics, Riga</p>
-            <ul class="list-disc list-inside space-y-0.5 text-xs text-gray-700 dark:text-dark-200">
-              <li>Secure data flows in MuleSoft/Salesforce environments</li>
-              <li>API security implementation with Git in agile teams</li>
-            </ul>
-          </div>
-          
-          <!-- Experience Item 2 -->
-          <div class="bg-white dark:bg-dark-800 rounded-lg p-3 shadow-sm">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
-              <h3 class="text-sm font-semibold text-gray-900 dark:text-white">Third Officer (Deck Officer)</h3>
-              <span class="text-xs font-medium text-primary-600 dark:text-primary-400 whitespace-nowrap">Jun 2012 – Jul 2020</span>
-            </div>
-            <p class="text-xs text-primary-600 dark:text-primary-400 font-medium mb-1.5">Nordic Tankers Marine A/S, Denmark (Global)</p>
-            <ul class="list-disc list-inside space-y-0.5 text-xs text-gray-700 dark:text-dark-200">
-              <li>High-stakes safety and compliance operations</li>
-              <li>Leadership experience transferable to SOC roles</li>
-            </ul>
-          </div>
-        </section>
 
-        <!-- Education -->
-        <section class="print-break-inside-avoid">
-          <h2 class="text-base font-bold font-heading text-gray-900 dark:text-white mb-2 flex items-center gap-1.5 pb-1 border-b border-primary-500">
-            <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
-            </svg>
-            Education
-          </h2>
-          
-          <!-- Education Item 1 -->
-          <div class="bg-white dark:bg-dark-800 rounded-lg p-3 shadow-sm mb-2">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
-              <h3 class="text-sm font-semibold text-gray-900 dark:text-white">BSc Computer Science (In Progress)</h3>
-              <span class="text-xs font-medium text-primary-600 dark:text-primary-400 whitespace-nowrap">Aug 2025 – Jul 2030</span>
-            </div>
-            <p class="text-xs text-primary-600 dark:text-primary-400 font-medium">Transport and Telecommunication Institute (TSI), Riga</p>
-          </div>
-          
-          <!-- Education Item 2 -->
-          <div class="bg-white dark:bg-dark-800 rounded-lg p-3 shadow-sm mb-2">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
-              <h3 class="text-sm font-semibold text-gray-900 dark:text-white">Associate's Degree in Software Engineering</h3>
-              <span class="text-xs font-medium text-primary-600 dark:text-primary-400 whitespace-nowrap">Feb 2021 – May 2023</span>
-            </div>
-            <p class="text-xs text-primary-600 dark:text-primary-400 font-medium mb-1">42 Wolfsburg, Germany (Remote)</p>
-            <ul class="list-disc list-inside text-xs text-gray-700 dark:text-dark-200">
-              <li>Minishell project: C-based Unix shell (processes, pipes, security concepts)</li>
-            </ul>
-          </div>
-          
-          <!-- Education Item 3 -->
-          <div class="bg-white dark:bg-dark-800 rounded-lg p-3 shadow-sm">
-            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
-              <h3 class="text-sm font-semibold text-gray-900 dark:text-white">Associate's Degree in Navigation</h3>
-              <span class="text-xs font-medium text-primary-600 dark:text-primary-400 whitespace-nowrap">2009 – 2013</span>
-            </div>
-            <p class="text-xs text-primary-600 dark:text-primary-400 font-medium mb-1">Marine Technical College of St. Petersburg</p>
-            <ul class="list-disc list-inside space-y-0.5 text-xs text-gray-700 dark:text-dark-200">
-              <li>Risk assessment, emergency response</li>
-              <li>International regulations (STCW/MARPOL)</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Key Skills -->
-        <section class="print-break-inside-avoid">
-          <h2 class="text-base font-bold font-heading text-gray-900 dark:text-white mb-2 flex items-center gap-1.5 pb-1 border-b border-primary-500">
-            <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-            Key Skills
-          </h2>
-          
-          <div class="bg-white dark:bg-dark-800 rounded-lg p-3 shadow-sm space-y-2">
-            <!-- Cybersecurity -->
             <div>
-              <h3 class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1 flex items-center gap-1">
-                <span>🔒</span> Cybersecurity
-              </h3>
-              <div class="flex flex-wrap gap-1">
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">Network Security</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">Ethical Hacking</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">ISC² Pathway</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">Data Privacy</span>
+              <div class="flex items-baseline justify-between gap-2">
+                <h3 class="font-semibold text-gray-900 dark:text-white">Nordic Tankers Marine A/S — Third Officer</h3>
+                <span class="text-primary-600 dark:text-primary-400 whitespace-nowrap">2012–2020</span>
               </div>
-            </div>
-            
-            <!-- Systems & OS -->
-            <div>
-              <h3 class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1 flex items-center gap-1">
-                <span>💻</span> Systems & OS
-              </h3>
-              <div class="flex flex-wrap gap-1">
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">Linux (Red Hat)</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">Bash Scripting</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">Command Line</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">RHCSA</span>
-              </div>
-            </div>
-            
-            <!-- Networking & Cloud -->
-            <div>
-              <h3 class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1 flex items-center gap-1">
-                <span>☁️</span> Networking & Cloud
-              </h3>
-              <div class="flex flex-wrap gap-1">
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">TCP/IP</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">Firewalls</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">Oracle Cloud</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">MuleSoft</span>
-              </div>
-            </div>
-            
-            <!-- Programming -->
-            <div>
-              <h3 class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1 flex items-center gap-1">
-                <span>⚙️</span> Programming
-              </h3>
-              <div class="flex flex-wrap gap-1">
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">Python</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">JavaScript</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">C</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">Bash</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border border-primary-200 dark:border-primary-700">SQL</span>
-              </div>
-            </div>
-            
-            <!-- Tools -->
-            <div>
-              <h3 class="text-xs font-semibold text-primary-600 dark:text-primary-400 mb-1 flex items-center gap-1">
-                <span>🛠️</span> Tools
-              </h3>
-              <div class="flex flex-wrap gap-1">
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-gray-100 dark:bg-dark-700 text-gray-700 dark:text-dark-200 border border-gray-200 dark:border-dark-600">Wireshark</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-gray-100 dark:bg-dark-700 text-gray-700 dark:text-dark-200 border border-gray-200 dark:border-dark-600">Nmap</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-gray-100 dark:bg-dark-700 text-gray-700 dark:text-dark-200 border border-gray-200 dark:border-dark-600">Metasploit</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-gray-100 dark:bg-dark-700 text-gray-700 dark:text-dark-200 border border-gray-200 dark:border-dark-600">Git/GitHub</span>
-                <span class="skill-tag px-1.5 py-0.5 text-xs font-medium rounded bg-gray-100 dark:bg-dark-700 text-gray-700 dark:text-dark-200 border border-gray-200 dark:border-dark-600">API Security</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Languages & Interests -->
-        <section class="print-break-inside-avoid">
-          <h2 class="text-base font-bold font-heading text-gray-900 dark:text-white mb-2 flex items-center gap-1.5 pb-1 border-b border-primary-500">
-            <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
-            </svg>
-            Languages & Interests
-          </h2>
-          
-          <div class="grid grid-cols-2 gap-2">
-            <!-- Languages -->
-            <div class="bg-white dark:bg-dark-800 rounded-lg p-2.5 shadow-sm">
-              <h3 class="text-xs font-semibold text-gray-900 dark:text-white mb-1.5">Languages</h3>
-              <div class="space-y-1 text-xs text-gray-700 dark:text-dark-200">
-                <div class="flex justify-between">
-                  <span>🇷🇺 Russian</span>
-                  <span class="font-medium text-primary-600 dark:text-primary-400">Native</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>🇱🇻 Latvian</span>
-                  <span class="font-medium text-primary-600 dark:text-primary-400">Native</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>🇬🇧 English</span>
-                  <span class="font-medium text-primary-600 dark:text-primary-400">C1</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>🇩🇪 German</span>
-                  <span class="font-medium text-primary-600 dark:text-primary-400">A1</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Interests -->
-            <div class="bg-white dark:bg-dark-800 rounded-lg p-2.5 shadow-sm">
-              <h3 class="text-xs font-semibold text-gray-900 dark:text-white mb-1.5">Interests</h3>
-              <ul class="space-y-1 text-xs text-gray-700 dark:text-dark-200">
-                <li class="flex items-start gap-1">
-                  <span class="text-primary-500">🔒</span>
-                  Security research
-                </li>
-                <li class="flex items-start gap-1">
-                  <span class="text-primary-500">🛡️</span>
-                  SOC operations
-                </li>
-                <li class="flex items-start gap-1">
-                  <span class="text-primary-500">🌐</span>
-                  Cloud security
-                </li>
-                <li class="flex items-start gap-1">
-                  <span class="text-primary-500">📊</span>
-                  Threat intelligence
-                </li>
+              <ul class="mt-0.5 list-disc pl-4 text-gray-700 dark:text-dark-200">
+                <li>High-stakes safety/compliance operations; calm execution under pressure.</li>
               </ul>
             </div>
           </div>
         </section>
+
+        <section class="section print-break-inside-avoid">
+          <h2 class="text-sm font-bold font-heading text-gray-900 dark:text-white border-b border-primary-500 pb-1">Education</h2>
+          <ul class="mt-2 space-y-1 text-[11px] text-gray-700 dark:text-dark-200 leading-snug">
+            <li><span class="font-semibold text-gray-900 dark:text-white">BSc Computer Science</span> (in progress) — TSI, Riga <span class="text-primary-600 dark:text-primary-400">(2025–2030)</span></li>
+            <li><span class="font-semibold text-gray-900 dark:text-white">Software Engineering</span> — 42 Wolfsburg (Remote) <span class="text-primary-600 dark:text-primary-400">(2021–2023)</span></li>
+            <li><span class="font-semibold text-gray-900 dark:text-white">Navigation</span> — Marine Technical College of St. Petersburg <span class="text-primary-600 dark:text-primary-400">(2009–2013)</span></li>
+          </ul>
+        </section>
       </div>
 
-      <!-- Right Column -->
-      <div class="space-y-3">
-        
-        <!-- Certifications -->
-        <section class="print-break-inside-avoid">
-          <h2 class="text-base font-bold font-heading text-gray-900 dark:text-white mb-2 flex items-center gap-1.5 pb-1 border-b border-primary-500">
-            <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-            </svg>
-            Certifications
-          </h2>
-          
-          <div class="bg-white dark:bg-dark-800 rounded-lg p-3 shadow-sm">
-            <div class="space-y-1.5 text-xs">
-              <div class="flex justify-between items-start gap-2">
-                <div class="flex-1">
-                  <h3 class="font-semibold text-gray-900 dark:text-white">Data Privacy Fundamentals</h3>
-                  <p class="text-xs text-gray-600 dark:text-dark-300">Northeastern University</p>
-                </div>
-                <span class="text-xs text-primary-600 dark:text-primary-400 whitespace-nowrap">Oct 2025</span>
-              </div>
-              
-              <div class="flex justify-between items-start gap-2 pt-1 border-t border-gray-100 dark:border-dark-700">
-                <div class="flex-1">
-                  <h3 class="font-semibold text-gray-900 dark:text-white">ISC² Candidate</h3>
-                  <p class="text-xs text-gray-600 dark:text-dark-300">ISC²</p>
-                </div>
-                <span class="text-xs text-primary-600 dark:text-primary-400 whitespace-nowrap">Oct 2025</span>
-              </div>
-              
-              <div class="flex justify-between items-start gap-2 pt-1 border-t border-gray-100 dark:border-dark-700">
-                <div class="flex-1">
-                  <h3 class="font-semibold text-gray-900 dark:text-white">Introduction to Cybersecurity</h3>
-                  <p class="text-xs text-gray-600 dark:text-dark-300">Cisco</p>
-                </div>
-                <span class="text-xs text-primary-600 dark:text-primary-400 whitespace-nowrap">Oct 2025</span>
-              </div>
-              
-              <div class="flex justify-between items-start gap-2 pt-1 border-t border-gray-100 dark:border-dark-700">
-                <div class="flex-1">
-                  <h3 class="font-semibold text-gray-900 dark:text-white">Introduction to Generative AI</h3>
-                  <p class="text-xs text-gray-600 dark:text-dark-300">Google Cloud</p>
-                </div>
-                <span class="text-xs text-primary-600 dark:text-primary-400 whitespace-nowrap">Oct 2025</span>
-              </div>
-              
-              <div class="flex justify-between items-start gap-2 pt-1 border-t border-gray-100 dark:border-dark-700">
-                <div class="flex-1">
-                  <h3 class="font-semibold text-gray-900 dark:text-white">EF SET English Certificate – C1 Advanced</h3>
-                  <p class="text-xs text-gray-600 dark:text-dark-300">EF Education First (68/100)</p>
-                </div>
-                <span class="text-xs text-primary-600 dark:text-primary-400 whitespace-nowrap">Nov 2024</span>
-              </div>
-              
-              <div class="flex justify-between items-start gap-2 pt-1 border-t border-gray-100 dark:border-dark-700">
-                <div class="flex-1">
-                  <h3 class="font-semibold text-gray-900 dark:text-white">Red Hat System Administration II (RH134)</h3>
-                  <p class="text-xs text-gray-600 dark:text-dark-300">Red Hat</p>
-                </div>
-                <span class="text-xs text-primary-600 dark:text-primary-400 whitespace-nowrap">Mar 2022</span>
-              </div>
-              
-              <div class="flex justify-between items-start gap-2 pt-1 border-t border-gray-100 dark:border-dark-700">
-                <div class="flex-1">
-                  <h3 class="font-semibold text-gray-900 dark:text-white">Red Hat Certified System Admin (RHCSA)</h3>
-                  <p class="text-xs text-gray-600 dark:text-dark-300">Red Hat</p>
-                </div>
-                <span class="text-xs text-primary-600 dark:text-primary-400 whitespace-nowrap">Oct 2021</span>
-              </div>
-              
-              <div class="flex justify-between items-start gap-2 pt-1 border-t border-gray-100 dark:border-dark-700">
-                <div class="flex-1">
-                  <h3 class="font-semibold text-gray-900 dark:text-white">Certified Developer</h3>
-                  <p class="text-xs text-gray-600 dark:text-dark-300">MuleSoft</p>
-                </div>
-                <span class="text-xs text-primary-600 dark:text-primary-400 whitespace-nowrap">Mar 2022</span>
-              </div>
-              
-              <div class="flex justify-between items-start gap-2 pt-1 border-t border-gray-100 dark:border-dark-700">
-                <div class="flex-1">
-                  <h3 class="font-semibold text-gray-900 dark:text-white">Oracle Cloud Infrastructure Foundations</h3>
-                  <p class="text-xs text-gray-600 dark:text-dark-300">Oracle</p>
-                </div>
-                <span class="text-xs text-primary-600 dark:text-primary-400 whitespace-nowrap">May 2022</span>
-              </div>
-              
-              <div class="flex justify-between items-start gap-2 pt-1 border-t border-gray-100 dark:border-dark-700">
-                <div class="flex-1">
-                  <h3 class="font-semibold text-gray-900 dark:text-white">Microverse Ruby/Databases Module</h3>
-                  <p class="text-xs text-gray-600 dark:text-dark-300">Microverse</p>
-                </div>
-                <span class="text-xs text-primary-600 dark:text-primary-400 whitespace-nowrap">Nov 2020</span>
-              </div>
-              
-              <div class="flex justify-between items-start gap-2 pt-1 border-t border-gray-100 dark:border-dark-700">
-                <div class="flex-1">
-                  <h3 class="font-semibold text-gray-900 dark:text-white">JavaScript Algorithms and Data Structures</h3>
-                  <p class="text-xs text-gray-600 dark:text-dark-300">freeCodeCamp</p>
-                </div>
-                <span class="text-xs text-primary-600 dark:text-primary-400 whitespace-nowrap">Sep 2020</span>
-              </div>
-              
-              <div class="flex justify-between items-start gap-2 pt-1 border-t border-gray-100 dark:border-dark-700">
-                <div class="flex-1">
-                  <h3 class="font-semibold text-gray-900 dark:text-white">Responsive Web Design</h3>
-                  <p class="text-xs text-gray-600 dark:text-dark-300">freeCodeCamp</p>
-                </div>
-                <span class="text-xs text-primary-600 dark:text-primary-400 whitespace-nowrap">Aug 2020</span>
-              </div>
-              
-              <div class="pt-1 border-t border-gray-100 dark:border-dark-700">
-                <h3 class="font-semibold text-gray-900 dark:text-white">TryHackMe Learning Paths</h3>
-                <p class="text-xs text-gray-600 dark:text-dark-300">Network Fundamentals, Cyber Defense, Web Fundamentals</p>
-                <a href="https://tryhackme.com/p/vombatov" target="_blank" rel="noopener noreferrer" class="text-xs text-primary-600 dark:text-primary-400 hover:underline mt-0.5 inline-block">View Profile →</a>
-              </div>
-            </div>
+      <!-- Right column -->
+      <div>
+        <section class="section print-break-inside-avoid">
+          <h2 class="text-sm font-bold font-heading text-gray-900 dark:text-white border-b border-primary-500 pb-1">Skills</h2>
+          <div class="mt-2 text-[11px] text-gray-700 dark:text-dark-200 leading-snug space-y-1">
+            <p><span class="font-semibold text-gray-900 dark:text-white">Security:</span> network security, ethical hacking, API security, data privacy.</p>
+            <p><span class="font-semibold text-gray-900 dark:text-white">Systems:</span> Linux (RHCSA), Bash, CLI, hardening basics.</p>
+            <p><span class="font-semibold text-gray-900 dark:text-white">Cloud/Tools:</span> OCI, Wireshark, Nmap, Metasploit, Git/GitHub.</p>
+            <p><span class="font-semibold text-gray-900 dark:text-white">Programming:</span> Python, JavaScript, C, SQL.</p>
           </div>
+        </section>
+
+        <section class="section print-break-inside-avoid">
+          <h2 class="text-sm font-bold font-heading text-gray-900 dark:text-white border-b border-primary-500 pb-1">Certifications</h2>
+          <ul class="mt-2 space-y-1 text-[11px] text-gray-700 dark:text-dark-200 leading-snug">
+            <li><span class="font-semibold text-gray-900 dark:text-white">ISC² Candidate</span> <span class="text-primary-600 dark:text-primary-400">(2025)</span></li>
+            <li><span class="font-semibold text-gray-900 dark:text-white">RHCSA</span> — Red Hat <span class="text-primary-600 dark:text-primary-400">(2021)</span></li>
+            <li><span class="font-semibold text-gray-900 dark:text-white">RH134</span> — Red Hat <span class="text-primary-600 dark:text-primary-400">(2022)</span></li>
+            <li><span class="font-semibold text-gray-900 dark:text-white">Intro to Cybersecurity</span> — Cisco <span class="text-primary-600 dark:text-primary-400">(2025)</span></li>
+            <li><span class="font-semibold text-gray-900 dark:text-white">OCI Foundations</span> — Oracle <span class="text-primary-600 dark:text-primary-400">(2022)</span></li>
+            <li><span class="font-semibold text-gray-900 dark:text-white">TryHackMe Learning Paths</span> — <a class="text-primary-600 dark:text-primary-400 hover:underline" href="https://tryhackme.com/p/vombatov" target="_blank" rel="noopener noreferrer">tryhackme.com/p/vombatov</a></li>
+          </ul>
+        </section>
+
+        <section class="section print-break-inside-avoid">
+          <h2 class="text-sm font-bold font-heading text-gray-900 dark:text-white border-b border-primary-500 pb-1">Languages</h2>
+          <p class="mt-2 text-[11px] text-gray-700 dark:text-dark-200 leading-snug">
+            Russian (Native), Latvian (Native), English (C1), German (A1)
+          </p>
         </section>
       </div>
     </div>
 
-    <!-- Footer Quote -->
-    <footer class="mt-4 pt-3 border-t border-gray-200 dark:border-dark-700 print-break-inside-avoid">
-      <blockquote class="text-center italic text-gray-600 dark:text-dark-300 text-xs">
-        🔐 Passionate about protecting systems through knowledge & vigilance. Open to EU Junior SOC/Analyst roles. References on request.
-      </blockquote>
-      
-      <!-- Back to Portfolio Link -->
-      <div class="mt-3 text-center no-print">
-        <a href="index.html" class="inline-flex items-center gap-1.5 text-xs font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-          </svg>
-          Back to Portfolio
-        </a>
-      </div>
-    </footer>
+    <div class="no-print mt-4 pt-3 border-t border-gray-200 dark:border-dark-700 text-center">
+      <a href="index.html" class="inline-flex items-center gap-1.5 text-xs font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Back to Portfolio
+      </a>
+    </div>
   </main>
 
-  <!-- JavaScript for Theme Toggle -->
   <script>
-    // Check for saved theme preference or default to system preference
-    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
+    if (
+      localStorage.getItem('color-theme') === 'dark' ||
+      (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark')
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove('dark')
     }
 
-    // Theme toggle functionality
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    
-    themeToggleBtn.addEventListener('click', function() {
-      // Toggle dark mode
-      document.documentElement.classList.toggle('dark');
-      
-      // Save preference
-      if (document.documentElement.classList.contains('dark')) {
-        localStorage.setItem('color-theme', 'dark');
-      } else {
-        localStorage.setItem('color-theme', 'light');
-      }
-    });
+    const themeToggleBtn = document.getElementById('theme-toggle')
 
-    // Respect system preference changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+    themeToggleBtn.addEventListener('click', function () {
+      document.documentElement.classList.toggle('dark')
+      if (document.documentElement.classList.contains('dark')) {
+        localStorage.setItem('color-theme', 'dark')
+      } else {
+        localStorage.setItem('color-theme', 'light')
+      }
+    })
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
       if (!('color-theme' in localStorage)) {
         if (e.matches) {
-          document.documentElement.classList.add('dark');
+          document.documentElement.classList.add('dark')
         } else {
-          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.remove('dark')
         }
       }
-    });
+    })
   </script>
 </body>
 </html>
