@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igors | CV - Compact</title>
+    <meta name="description" content="Professional CV of Igors - Junior Cybersecurity Professional">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Ensure print layout is exact */
+        @media print {
+            body {
+                background-color: white;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .page-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-height: 100vh !important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                border: none !important;
+            }
+            
+            /* Remove margins from the page itself to maximize space */
+            @page {
+                margin: 0;
+                size: auto; 
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-slate-800 text-[10.5px] leading-snug">
+
+    <!-- Print Button -->
+    <button onclick="window.print()" class="no-print fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all z-50 flex items-center gap-2 cursor-pointer hover:shadow-xl hover:-translate-y-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m10.5 0a48.536 48.536 0 0 0-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5Zm-3 0h.008v.008H15V10.5Z" />
+        </svg>
+        Print / Save PDF
+    </button>
+
+    <!-- Page Container (Simulating A4/Letter) -->
+    <div class="page-container max-w-[210mm] mx-auto bg-white min-h-[297mm] shadow-xl flex flex-col md:flex-row print:flex-row print:min-h-0 overflow-hidden">
+        
+        <!-- LEFT SIDEBAR (Approx 32%) -->
+        <aside class="w-full md:w-[32%] print:w-[32%] bg-slate-50 border-r border-slate-200 p-6 print:p-5 flex flex-col gap-5">
+            
+            <!-- Profile Header -->
+            <div class="text-center md:text-left">
+                <div class="w-32 h-32 mx-auto md:mx-0 bg-white rounded-full mb-4 border-4 border-white shadow-sm overflow-hidden relative ring-1 ring-slate-200">
+                    <img src="i_oleinikovs_foto.jpg" alt="Igors Oleinikovs" class="w-full h-full object-cover">
+                </div>
+                <h1 class="text-2xl font-bold text-slate-900 leading-none mb-1">Igors Oleinikovs</h1>
+                <p class="text-blue-600 font-semibold text-xs leading-tight">Junior Cybersecurity Professional</p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="space-y-2 text-[10px]">
+                <div class="flex items-center gap-2.5 group">
+                    <span class="flex items-center justify-center w-5 h-5 rounded bg-white text-blue-600 shadow-sm text-xs">📍</span> 
+                    <span>Latvia</span>
+                </div>
+                <div class="flex items-center gap-2.5 group">
+                    <span class="flex items-center justify-center w-5 h-5 rounded bg-white text-blue-600 shadow-sm text-xs">📞</span> 
+                    <a href="tel:+37122811907" class="hover:text-blue-600 transition group-hover:underline decoration-blue-600">+371 22811907</a>
+                </div>
+                <div class="flex items-center gap-2.5 group">
+                    <span class="flex items-center justify-center w-5 h-5 rounded bg-white text-blue-600 shadow-sm text-xs">✉️</span> 
+                    <a href="mailto:vombat@duck.com" class="hover:text-blue-600 transition group-hover:underline decoration-blue-600">vombat@duck.com</a>
+                </div>
+                <div class="flex items-center gap-2.5 group">
+                    <span class="flex items-center justify-center w-5 h-5 rounded bg-white text-blue-600 shadow-sm text-xs">🔗</span> 
+                    <a href="https://www.linkedin.com/in/oleinikovsigors" target="_blank" class="hover:text-blue-600 transition group-hover:underline decoration-blue-600">in/oleinikovsigors</a>
+                </div>
+            </div>
+
+            <hr class="border-slate-200">
+
+            <!-- Skills -->
+            <div class="space-y-4">
+                <h2 class="uppercase tracking-widest text-[10px] font-bold text-slate-400">Technical Skills</h2>
+                
+                <div class="space-y-3">
+                    <div>
+                        <h3 class="font-bold text-slate-700 mb-1.5 text-[10px] flex items-center gap-1">
+                            <span class="w-1 h-1 bg-blue-500 rounded-full"></span> Cybersecurity
+                        </h3>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">Network Security</span>
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">Ethical Hacking</span>
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">ISC²</span>
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">Privacy</span>
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">Mulesoft</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-slate-700 mb-1.5 text-[10px] flex items-center gap-1">
+                            <span class="w-1 h-1 bg-blue-500 rounded-full"></span> Systems & OS
+                        </h3>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">Linux (RHCSA)</span>
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">Bash</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-slate-700 mb-1.5 text-[10px] flex items-center gap-1">
+                            <span class="w-1 h-1 bg-blue-500 rounded-full"></span> Networking
+                        </h3>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">TCP/IP</span>
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">Firewalls</span>
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">Cloud</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-slate-700 mb-1.5 text-[10px] flex items-center gap-1">
+                            <span class="w-1 h-1 bg-blue-500 rounded-full"></span> Programming
+                        </h3>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">Python</span>
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">JS</span>
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">C</span>
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">SQL</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-slate-700 mb-1.5 text-[10px] flex items-center gap-1">
+                            <span class="w-1 h-1 bg-blue-500 rounded-full"></span> Tools
+                        </h3>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">Nmap</span>
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">Metasploit</span>
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">Wireshark</span>
+                            <span class="px-1.5 py-0.5 bg-white text-slate-600 rounded text-[9px] border border-slate-200 shadow-sm">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="space-y-2 mt-auto">
+                <h2 class="uppercase tracking-widest text-[10px] font-bold text-slate-400">Languages</h2>
+                <div class="grid grid-cols-2 gap-2 text-[10px]">
+                    <div>
+                        <span class="block text-slate-900 font-medium">Russian</span>
+                        <span class="text-slate-500 text-[9px]">Native</span>
+                    </div>
+                    <div>
+                        <span class="block text-slate-900 font-medium">Latvian</span>
+                        <span class="text-slate-500 text-[9px]">Native</span>
+                    </div>
+                    <div>
+                        <span class="block text-slate-900 font-medium">English</span>
+                        <span class="text-slate-500 text-[9px]">C1 (Advanced)</span>
+                    </div>
+                    <div>
+                        <span class="block text-slate-900 font-medium">German</span>
+                        <span class="text-slate-500 text-[9px]">A2 (Elementary)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interests -->
+             <div class="space-y-2">
+                <h2 class="uppercase tracking-widest text-[10px] font-bold text-slate-400">Interests</h2>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="px-1.5 py-0.5 bg-slate-200 text-slate-600 rounded text-[9px]">Security</span>
+                    <span class="px-1.5 py-0.5 bg-slate-200 text-slate-600 rounded text-[9px]">SOC ops</span>
+                    <span class="px-1.5 py-0.5 bg-slate-200 text-slate-600 rounded text-[9px]">Cloud</span>
+                    <span class="px-1.5 py-0.5 bg-slate-200 text-slate-600 rounded text-[9px]">Threat Intel</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- RIGHT MAIN CONTENT (Approx 68%) -->
+        <main class="w-full md:w-[68%] print:w-[68%] p-8 pt-7 pr-7 print:p-6 print:pt-6 flex flex-col gap-5">
+            
+            <!-- Summary -->
+            <section>
+                <h2 class="flex items-center gap-2 text-sm font-bold text-slate-900 border-b border-slate-200 pb-2 mb-2">
+                    <span class="text-blue-600 bg-blue-50 p-1 rounded">💼</span> Professional Summary
+                </h2>
+                <p class="text-slate-600 text-justify leading-relaxed">
+                    Software Engineer transitioning to cybersecurity with 8+ years of high-stakes experience in maritime operations. Strong technical foundations in network security, ethical hacking, and system hardening (RHCSA). ISC² Candidate. Leadership and crisis management experience from maritime background transferable to SOC operations and incident response.
+                </p>
+            </section>
+
+            <!-- Experience -->
+            <section>
+                <h2 class="flex items-center gap-2 text-sm font-bold text-slate-900 border-b border-slate-200 pb-2 mb-3">
+                    <span class="text-blue-600 bg-blue-50 p-1 rounded">📋</span> Experience
+                </h2>
+                
+                <div class="flex flex-col gap-4">
+                    <div class="relative pl-3 border-l-2 border-slate-100">
+                        <div class="flex justify-between items-baseline mb-0.5">
+                            <h3 class="font-bold text-slate-800 text-[11px]">Application Development Analyst</h3>
+                            <span class="text-blue-600 font-semibold text-[10px] bg-blue-50 px-1.5 py-0.5 rounded">2022-2023</span>
+                        </div>
+                        <div class="text-slate-500 font-medium text-[10px] mb-1">Accenture Baltics</div>
+                        <p class="text-slate-600 text-[10px]">Secured data flows in MuleSoft/Salesforce environment. Implemented API security best practices and utilized Git in agile team workflows.</p>
+                    </div>
+
+                    <div class="relative pl-3 border-l-2 border-slate-100">
+                        <div class="flex justify-between items-baseline mb-0.5">
+                            <h3 class="font-bold text-slate-800 text-[11px]">Third Officer (Deck Officer)</h3>
+                            <span class="text-blue-600 font-semibold text-[10px] bg-blue-50 px-1.5 py-0.5 rounded">2012-2020</span>
+                        </div>
+                        <div class="text-slate-500 font-medium text-[10px] mb-1">Nordic Tankers Marine A/S, Denmark</div>
+                        <p class="text-slate-600 text-[10px]">Managed high-stakes safety & compliance operations. Developed leadership and crisis decision-making skills directly transferable to SOC and incident response roles.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section>
+                <h2 class="flex items-center gap-2 text-sm font-bold text-slate-900 border-b border-slate-200 pb-2 mb-3">
+                    <span class="text-blue-600 bg-blue-50 p-1 rounded">🎓</span> Education
+                </h2>
+                
+                <div class="grid grid-cols-1 gap-3">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-[11px]">BSc Computer Science</h3>
+                            <div class="text-slate-500 text-[10px]">TSI, Riga</div>
+                        </div>
+                        <span class="text-slate-400 font-medium text-[9px]">2025-2030 (Expected)</span>
+                    </div>
+
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-[11px]">Software Engineering</h3>
+                            <div class="text-slate-500 text-[10px]">42 Wolfsburg, Germany</div>
+                            <p class="text-slate-500 mt-0.5 text-[9px] italic">Minishell project: C-based Unix shell, process management, pipes, security.</p>
+                        </div>
+                        <span class="text-slate-400 font-medium text-[9px]">2021-2023</span>
+                    </div>
+
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-[11px]">Navigation</h3>
+                            <div class="text-slate-500 text-[10px]">Marine Technical College, St. Petersburg</div>
+                        </div>
+                        <span class="text-slate-400 font-medium text-[9px]">2009-2013</span>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Certifications -->
+             <section>
+                <h2 class="flex items-center gap-2 text-sm font-bold text-slate-900 border-b border-slate-200 pb-2 mb-3">
+                    <span class="text-blue-600 bg-blue-50 p-1 rounded">✓</span> Certifications
+                </h2>
+                
+                <div class="grid grid-cols-2 gap-x-6 gap-y-3">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-[10px]">ISC² Candidate</h3>
+                            <div class="text-slate-500 text-[9px]">International ISC²</div>
+                        </div>
+                        <span class="text-blue-600 font-bold text-[9px]">2025</span>
+                    </div>
+
+                     <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-[10px]">RHCSA</h3>
+                            <div class="text-slate-500 text-[9px]">Red Hat Certified System Admin</div>
+                        </div>
+                        <span class="text-slate-400 text-[9px]">2021</span>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-[10px]">Data Privacy Funds.</h3>
+                            <div class="text-slate-500 text-[9px]">Northeastern University</div>
+                        </div>
+                        <span class="text-blue-600 font-bold text-[9px]">2025</span>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-[10px]">Mulesoft Certified Developer</h3>
+                            <div class="text-slate-500 text-[9px]">Mulesoft (Salesforce)</div>
+                        </div>
+                        <span class="text-slate-400 text-[9px]">2023</span>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-[10px]">Cisco Cyber Intro</h3>
+                            <div class="text-slate-500 text-[9px]">Cisco</div>
+                        </div>
+                        <span class="text-blue-600 font-bold text-[9px]">2025</span>
+                    </div>
+
+                     <div class="col-span-2 border-t border-slate-50 pt-2 mt-1">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-[10px]">TryHackMe Learning Paths</h3>
+                                <div class="text-slate-500 text-[9px]">Network Fundamentals, Cyber Defense, Web Hacking</div>
+                            </div>
+                            <span class="text-slate-400 text-[9px]">2024</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tools & Methodologies -->
+            <section class="mt-auto">
+                <h2 class="flex items-center gap-2 text-sm font-bold text-slate-900 border-b border-slate-200 pb-2 mb-2">
+                    <span class="text-blue-600 bg-blue-50 p-1 rounded">🛠️</span> Tools & Tech
+                </h2>
+                <div class="text-[10px] leading-relaxed text-slate-600 bg-slate-50 p-3 rounded border border-slate-100">
+                    <span class="font-bold text-slate-800">Security:</span> Wireshark, Nmap, Metasploit, API Security <span class="text-slate-300 mx-1">|</span>
+                    <span class="font-bold text-slate-800">Dev:</span> Git/GitHub <span class="text-slate-300 mx-1">|</span>
+                    <span class="font-bold text-slate-800">Cloud:</span> OCI, MuleSoft CloudHub <span class="text-slate-300 mx-1">|</span>
+                    <span class="font-bold text-slate-800">Compliance:</span> STCW/ISM (Transferable to GRC)
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>
